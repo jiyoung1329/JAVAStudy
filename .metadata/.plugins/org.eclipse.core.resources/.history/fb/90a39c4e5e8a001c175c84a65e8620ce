@@ -1,0 +1,22 @@
+package conditions;
+
+import java.util.Scanner;
+
+public class Quiz07 {
+		Scanner sc = new Scanner(System.in);
+		
+		int day = sc.nextInt();
+		int num = day % 7;
+		switch(num) {
+		case 0: System.out.println("월요일입니다."); break;
+		case 1: System.out.println("월요일입니다."); break;
+		case 2: System.out.println("월요일입니다.");break;
+		case 3: System.out.println("월요일입니다.");break;
+		case 4: System.out.println("월요일입니다.");break;
+		case 5: System.out.println("월요일입니다.");break;
+		case 6: System.out.println("월요일입니다.");break;
+		}
+		
+	}
+
+}

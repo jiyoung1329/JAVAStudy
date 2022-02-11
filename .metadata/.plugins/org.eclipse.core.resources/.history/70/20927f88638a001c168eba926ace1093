@@ -1,0 +1,19 @@
+package conditions;
+
+import java.util.Scanner;
+
+public class Quiz08 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int isExit = 0;
+		while(isExit != 4) {
+			System.out.println("1. 우리집 등록");
+			System.out.println("2. 회사 등록");
+			System.out.println("3. 등록보기 등록");
+			System.out.println("4. 나가기");
+			isExit = sc.nextInt();
+			
+		}
+	}
+}

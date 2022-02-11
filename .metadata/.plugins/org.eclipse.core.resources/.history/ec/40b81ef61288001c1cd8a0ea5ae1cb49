@@ -1,0 +1,11 @@
+package outputs;
+
+public class Ex03 {
+	public static void main(String[] args) {
+		System.out.println("=======================================");
+		System.out.println("이름\t 전화번호 \t");
+		System.out.println("=======================================");
+		System.out.println("---------------------------------------");
+		System.out.println("---------------------------------------");
+	}
+}

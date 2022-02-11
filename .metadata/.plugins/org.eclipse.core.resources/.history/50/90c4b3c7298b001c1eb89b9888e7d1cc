@@ -1,0 +1,45 @@
+package loop;
+
+import java.util.Scanner;
+
+public class Quiz05 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		// 두 수의 최대공약수 구하기
+		int min = sc.nextInt();
+		int max = sc.nextInt();
+		if (min > max) {
+			int tmp = max;
+			max = min;
+			min = tmp;
+		}
+		
+		int GCD = min;
+		for (int i=min; i>=1; i--) {
+			if (max % i == 0 && min % i == 0) {
+				GCD = i;
+				break;
+			}
+		}
+		System.out.println(min+"과 "+max+"의 최대공약수는 " + GCD + "입니다.");
+		
+				
+		// 1~1000 자연수에서 개개의 수가 서로 연속적으로 되어있는 수를 찾아 출력
+		for (int i=10; i<=1000; i++) {
+			if (i <100) {
+				if ((i % 10) == (i/10)) {
+					System.out.print(i + ", ");
+				}
+			} else {
+				if ((i % 10) == ((i/10)%10) && (i % 10) == ((i/100))) {
+					System.out.print(i + ", ");
+				}
+			}
+			System.out.println(", ");
+			
+		}
+		
+			
+	}
+}

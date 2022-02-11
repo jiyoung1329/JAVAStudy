@@ -1,0 +1,12 @@
+package conditions;
+
+public class Quiz06 {
+	public static void main(String[] args) {
+		
+		// 커피 개수 계산, 10개 이하 : 2000원, 10개 초과시 초과분에 대해서는 1500원
+		
+		// 과자 가격 계산
+		// 1~9개 : 1000원, 10개 ~ 99개 : 전체의 10%할인, 100개 이상 : 전체의 12% 할인
+		
+	}
+}

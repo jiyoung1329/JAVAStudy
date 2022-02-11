@@ -1,0 +1,15 @@
+package loop;
+
+import java.util.Scanner;
+
+public class Quiz06 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		int check = true;
+		for (int i=2; i<=num; i++) {
+			for (int j=2; j<i; i++)
+		}
+	}
+}

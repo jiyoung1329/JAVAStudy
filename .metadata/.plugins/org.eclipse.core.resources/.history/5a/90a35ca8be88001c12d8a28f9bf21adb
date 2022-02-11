@@ -1,0 +1,16 @@
+package input;
+
+public class Ex01 {
+	public static void main(String[] args) {
+		System.out.print("입력 : ");
+		/*
+		 * System.in.read();
+		 * 단일 문자 입력 : 메소드 한번에 한 문자 입력
+		 * 입력후 결과 반환, 반환자료형은 int
+		 * 
+		 */
+		
+		System.in.read();
+				
+	}
+}

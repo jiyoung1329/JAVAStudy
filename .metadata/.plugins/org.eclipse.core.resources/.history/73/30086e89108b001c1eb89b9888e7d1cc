@@ -1,0 +1,23 @@
+package loop;
+
+import java.util.Scanner;
+ 
+public class Quiz03 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		
+		//두 수를 입력받아 작은수 ~ 큰 수의 합계 출력
+		int num1 = sc.nextInt();
+		int num2 = sc.nextInt();
+		int max, min;
+		
+		if (num1 < num2)  {max = num2; min = num1;}
+		else {max = num1; min = num2;}
+		
+		
+		
+		
+		// 수를 입력받아 소수인지 아닌지 판별해서 출력하기
+	}
+}

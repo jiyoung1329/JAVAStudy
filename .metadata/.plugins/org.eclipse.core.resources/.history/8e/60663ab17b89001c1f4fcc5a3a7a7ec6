@@ -1,0 +1,12 @@
+package operators;
+
+public class Quiz01 {
+	public static void main(String[] args) {
+		int num, data1, data2;
+		
+		
+		System.out.print("수 입력 : ");
+		Scanner sc = new Scanner(System.setIn(null);)
+		System.out.println("");
+	}
+}
