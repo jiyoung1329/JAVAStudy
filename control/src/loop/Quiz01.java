@@ -3,7 +3,7 @@ package loop;
 public class Quiz01 {
 	public static void main(String[] args) {
 		int i;
-		// hello 네번 출력하기
+		// hello 네번 출력하기 
 		for (i = 1; i <= 4; i++) {
 			System.out.println(i+". hello");
 		}
