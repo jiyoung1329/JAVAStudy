@@ -2,7 +2,7 @@ package operators;
 
 import java.util.Scanner;
 
-public class Quiz김지영 {
+public class Quiz01 {
 	public static void main(String[] args) {
 		int num, data1, data2;
 		
