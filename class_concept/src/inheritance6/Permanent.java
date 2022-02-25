@@ -1,4 +1,4 @@
-package inheritance2;
+package inheritance6;
 /*
  * Permanent
  * 멤버 변수 : 이름(name), 급여(salary)
@@ -9,7 +9,8 @@ public class Permanent extends Employee{
 	private int salary;
 	
 	public Permanent(String name, int salary) {
-		setName(name);
+		super(name);
+//		setName(name);
 		this.salary = salary;
 	}
 	public int getSalary() {

@@ -23,7 +23,7 @@ public class Reverse {
 	public int getResult() {
 		int tmp = data;
 		result = 0;
-		while (tmp > 0) {
+		while (tmp > 0) { 
 			result *= 10;
 			result += (tmp % 10);
 			tmp /= 10;

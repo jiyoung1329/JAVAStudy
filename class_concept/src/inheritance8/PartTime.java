@@ -1,4 +1,4 @@
-package inheritance2;
+package inheritance8;
 
 /*
  * PartTime 
@@ -11,11 +11,13 @@ public class PartTime extends Employee{
 	private int pay;
 
 	public PartTime(String name, int time, int pay) {
-		super.setName(name);
+		super(name);
+//		super.setName(name);
 		this.time = time;
 		this.pay = pay;
 	}
 
+	@Override
 	public int getSalary() {
 		return time * pay;
 	}
