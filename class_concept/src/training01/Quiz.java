@@ -10,7 +10,7 @@ public class Quiz {
 	private static ArrayList<String> tels = new ArrayList<String>();
 	private static ArrayList<String> emails = new ArrayList<String>();
 
-	// 유효성 검사
+	// 유효성 검사- test
 	private static String emailRegExp = "[A-Za-z0-9+_.-]+@(.+)$";
 	private static String telRegExp = "^\\\\d{3}-\\\\d{3,4}-\\\\d{4}$";
 	
@@ -47,13 +47,12 @@ public class Quiz {
 		return menu;
 	}
 	
-	// 회원 신규 등록
-	public static void insert() {
-		String email, name, tel;
+	// 이메일 입력 받기
+	public static String inputEmail() {
+		String email;
 		
-		// 이메일
 		while (true) {
-			System.out.print("등록할 회원의 이메일을 입력해 주세요 >> ");
+			System.out.print("이메일을 입력해 주세요 >> ");
 			email = sc.next();
 			
 			// 이메일 유효성 검사
@@ -70,31 +69,54 @@ public class Quiz {
 				System.out.println("유효한 이메일이 아닙니다. 다시 입력해주세요.");
 			}
 		}
+		return email;
+	}
+	
+	// 이름 입력받기
+	public static String inputName() {
+		String name;
 		
-		// 이름
-		System.out.print("등록할 이름을 입력해 주세요 >> ");
+		System.out.print("이름을 입력해 주세요 >> ");
 		name = sc.next();
+		
+		return name;
+	}
 
-		// 전화번호
+	// 전화번호 입력받기
+	public static String inputTel() {
+		String tel;
 		while(true) {
-			System.out.print("등록할 전화번호를 입력해 주세요 >> ");
+			System.out.print("전화번호를 입력해 주세요 >> ");
 			tel = sc.next();
 			
 			if (tel.matches(telRegExp)) break;
 			else {
 				System.out.println("잘못된 전화번호입니다. 다시 입력해주세요.");
 			}
-			
 		}
 		
-		// 회원 정보 등록하기
+		return tel;
+	}
+	
+	// 회원 신규 등록
+	public static void insert(String email, String name, String tel) {
 		emails.add(email);
 		names.add(name);
 		tels.add(tel);
+		System.out.println("회원 등록이 완료되었습니다.");
 	}
 	
 	// 검색하기
-	public static void selectOne() {}
+	public static void selectOne(String email) {
+		int idx = tels.indexOf(email);
+		if (idx == -1) {
+			System.out.println("해당하는 회원 정보가 없습니다.");
+		} else {
+			System.out.println("결과 >> ");
+			System.out.println(
+					 "이메일 : " + emails.get(idx) + ", 이름 : " + names.get(idx) + ", 전화번호 : " + tels.get(idx));
+		}
+	}
 	
 	// 회원 전체 출력
 	public static void selectAll() {
@@ -109,10 +131,31 @@ public class Quiz {
 	}
 	
 	// 회원 삭제
-	public static void delete() {}
+	public static void delete(String email) {
+		// 삭제할 회원 입력
+		int idx = tels.indexOf(email);
+		if (idx == -1) {
+			System.out.println("해당하는 회원 정보가 없습니다. ");
+		} else {
+			emails.remove(idx);
+			tels.remove(idx);
+			names.remove(idx);
+			System.out.println("회원 정보를 삭제 하였습니다.");
+		}
+		
+
+	}
 	
 	// 회원 수정
-	public static void update() {}
+	public static void update(String email) {
+		int idx = tels.indexOf(email);
+		if (idx == -1) {
+			System.out.println("해당하는 회원 정보가 없습니다.");
+		} else {
+			names.set(idx, inputName());
+			tels.set(idx, inputTel());
+		}
+	}
 	
 	
 	
@@ -141,74 +184,34 @@ public class Quiz {
 
 			// 회원 모두 보기
 			else if (choose == 5) {
-				printInfos(tels, names, emails);
 				selectAll();
 			}
 
 			// 회원 삭제
 			else if (choose == 4) {
-				printInfos(tels, names, emails);
-
-				delete();
-				// 삭제할 회원 입력
 				if (emails.size() != 0) {
-					System.out.print("삭제할 회원의 이메일을 입력하세요 >> ");
-					email = sc.next();
-
-					idx = tels.indexOf(email);
-					if (idx == -1) {
-						System.out.println("해당하는 회원 정보가 없습니다. ");
-					} else {
-						emails.remove(idx);
-						tels.remove(idx);
-						names.remove(idx);
-						System.out.println("회원 정보를 삭제 하였습니다.");
-					}
+					delete(inputEmail());
+					
+				} else {
+					System.out.println("현재 등록된 회원 정보가 없습니다.");
 				}
-
+			
+				
 			}
 			// 회원 수정
 			else if (choose == 3) {
 				// 회원 출력
-				printInfos(tels, names, emails);
-				
-				update();
-				
-				System.out.print("수정할 회원의 이메일을 입력하세요 >>");
-				email = sc.next();
+				update(inputEmail());
 
-				idx = tels.indexOf(email);
-				if (idx == -1) {
-					System.out.println("해당하는 회원 정보가 없습니다.");
-				} else {
-					infos = addInfos(sc, emails);
-					emails.set(idx, infos[0]);
-					names.set(idx, infos[1]);
-					tels.set(idx, infos[2]);
-				}
-				// 회원 검색
+				
+			// 회원 검색
 			} else if (choose == 2) {
-				System.out.println("검색할 회원의 이메일을 입력해 주세요.");
-				email = sc.next();
-				
-				selectOne();
-				
-				idx = tels.indexOf(email);
-				if (idx == -1) {
-					System.out.println("해당하는 회원 정보가 없습니다.");
-				} else {
-					System.out.println("결과 >> ");
-					System.out.println(
-							 "이메일 : " + emails.get(idx) + ", 이름 : " + names.get(idx) + ", 전화번호 : " + tels.get(idx));
-				}
+				selectOne(inputEmail());
 
-				// 회원 등록
+			// 회원 등록
 			} else if (choose == 1) {
 				System.out.println("새로운 회원을 등록하세요!\n");
-				infos = addInfos(sc, emails);
-				emails.add(infos[0]);
-				names.add(infos[1]);
-				tels.add(infos[2]);
+				insert(inputEmail(), inputName(), inputTel());
 
 			} else {
 				System.out.println("잘못입력하였습니다. 다시 입력해주세요.");
