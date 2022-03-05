@@ -1,5 +1,8 @@
 package string_collection;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Quiz01 {
 	public static void main(String[] args) {
 		method1();
@@ -8,13 +11,20 @@ public class Quiz01 {
 	}
 	public static void method1() {
 		String str;
-		
+	
+		//Date to String 변환
+        SimpleDateFormat sDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+        System.out.println(sDate.format(new Date()));
+
 		/*
 		 * "Have a nice day Have a nice day Have a nice day" 문자열에서
 		 * a의 위치를 저장하여 출력하기 
 		 * 결과 : 1, 5, 13, 17, 21, 29, 33, 37, 45
 		 */
 		str = "Have a nice day Have a nice day Have a nice day";
+		Date test = new Date();
+		System.out.println(test.toString());
 		System.out.println("String : " + str);
 		String result ="";
 		for (int i=0; i<str.length(); i++) {
