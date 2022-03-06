@@ -16,7 +16,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		while(true){
-			System.out.println("명령어를 입력하세요");
+			System.out.println("명령어를 입력하세요");    
 			System.out.print("> ");
 			String command = sc.nextLine();
 			if(command.equalsIgnoreCase("exit")){
