@@ -1,0 +1,38 @@
+package disassemble.Service;
+
+import disassemble.DAO.MemberDAO;
+import disassemble.DTO.MemberDTO;
+
+public class MemberDeleteService {
+	
+	private MemberDAO memberDao;
+	
+	public MemberDeleteService(MemberDAO memberDao) {
+		this.memberDao = memberDao;
+	}
+	
+	public void checkPassword(String email, String password, String confirmPassword) {
+		
+		// 패스워드 확인
+		if (password.equals(confirmPassword)) {
+			// MemberDAO 객체 내 selectEmail() 메소드를 호출
+			MemberDTO member = memberDao.selectEmail(email);
+			
+			if (member != null) {
+				// 저장된 회원 정보와 입력된 회원 정보 검증
+				if (member.getPassword().equals(password)) {
+					// MemberDAO 객체 내 delete() 호출
+					memberDao.delete(email);
+					
+				} else {
+					System.out.println("기존 비밀번호와 일치하지 않습니다.");
+				}
+			} else {
+				System.out.println("등록된 회원이 아닙니다.");
+			}
+			
+		} else {
+			System.out.println("두 비빌번호가 일치하지 않습니다.");
+		}
+	}
+}
