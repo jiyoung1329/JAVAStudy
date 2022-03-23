@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="300.0" prefWidth="500.0">
+         <top>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="100.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="메뉴" />
+                  <Label text="홈" />
+                  <Label text="로그인" />
+               </children>
+            </FlowPane>
+         </top>
+         <bottom>
+            <StackPane prefHeight="250.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="250.0" fitWidth="500.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../javafx_concept/src/img/quiz.jpg" />
+                     </image>
+                  </ImageView>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <bottom>
+                        <Button mnemonicParsing="false" text="바닥글 들어가는 곳" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin>
+                        </Button>
+                     </bottom>
+                     <center>
+                        <AnchorPane prefHeight="216.0" prefWidth="137.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" text="내용 들어가는 곳" />
+                           </children>
+                        </AnchorPane>
+                     </center>
+                     <right>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.66665649414062" minWidth="10.0" prefWidth="116.66665649414062" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.66668701171875" minWidth="10.0" prefWidth="83.33334350585938" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="132.33334350585938" minHeight="10.0" prefHeight="31.666664123535156" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="138.00000762939453" minHeight="4.666656494140625" prefHeight="137.33333587646484" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="아이디 입력" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="비밀번호 입력" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets top="2.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="80.0" text="로그인" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                                 <GridPane.margin>
+                                    <Insets left="2.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </right>
+                     <left>
+                        <FlowPane prefHeight="216.0" prefWidth="155.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ListView fx:id="listView" prefHeight="200.0" prefWidth="144.0" />
+                           </children>
+                        </FlowPane>
+                     </left>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </bottom>
+         <left>
+            <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

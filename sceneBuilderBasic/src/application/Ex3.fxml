@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Ex4Controller">
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="50.0" prefHeight="70.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="홈" />
+            <Label text="사회" />
+            <Label text="경제" />
+            <Label text="국제" />
+            <Label text="문화" />
+         </children>
+      </FlowPane>
+   </top>
+   <left>
+      <VBox prefHeight="350.0" prefWidth="131.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="카테고리" />
+            <Label text="노트북/PC" />
+            <Label text="자동차용품" />
+            <Label text="휴대폰" />
+            <Label text="캠핑/낚시" />
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="330.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="100.0">
+               <children>
+                  <Label text="ID">
+                     <padding>
+                        <Insets right="16.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField prefHeight="30.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="PW">
+                     <padding>
+                        <Insets right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <PasswordField prefHeight="30.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="369.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="여">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderToggle" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="남" toggleGroup="$genderToggle" />
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="369.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="게임">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="공부" />
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="369.0">
+               <children>
+                  <Label text="하고 싶은 말" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextArea prefHeight="100.0" prefWidth="246.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <HBox prefHeight="330.0" prefWidth="330.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="330.0" prefWidth="330.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.3333740234375" minWidth="10.0" prefWidth="197.6666259765625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.6666259765625" minWidth="10.0" prefWidth="112.3333740234375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="193.99999237060547" minHeight="10.0" prefHeight="35.666656494140625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="265.3333435058594" minHeight="10.0" prefHeight="265.3333435058594" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField prefHeight="30.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+                  <PasswordField prefHeight="30.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin>
+                  </PasswordField>
+                  <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="90.0" text="로그인" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowSpan="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </HBox>
+   </right>
+</BorderPane>
